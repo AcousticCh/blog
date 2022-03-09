@@ -1,0 +1,13 @@
+header >h1{
+	display: inline-block;
+	float: left;
+}
+header > select; {
+	display: inline-block;
+    float: right;
+    
+  }
+  header{
+  display: inline-block;
+  clear: both;
+  }

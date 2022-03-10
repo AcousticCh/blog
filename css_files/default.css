@@ -1,13 +1,46 @@
-header >h1{
-	display: inline-block;
-	float: left;
+body {
+	background-color: #809080;
 }
-header > select; {
-	display: inline-block;
-    float: right;
-    
-  }
-  header{
-  display: inline-block;
-  clear: both;
-  }
+
+header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 5px solid #858085;
+  
+}	
+
+.drop-button{
+	text-decoration: none;
+	background-color: #858085;
+	border: none;
+	cursor: pointer;
+	height: 30px;
+	border-radius: .30rem;
+}
+
+.dropdown{
+	position: relative;
+}
+
+.dropdown-menu{
+	position: absolute;
+	right: 0;
+	background-color: #858085;
+	border-radius: .30rem;
+	box-shadow: 2px 2px 4px .2px rgba(0, 0, 0, .3);
+	padding: .5rem;
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+	pointer-events: none;
+}
+
+.dropdown > .drop-button:focus + .dropdown-menu{
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+.drop-button:hover, .drop-button:focus{
+	
+}
+

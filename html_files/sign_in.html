@@ -6,16 +6,52 @@
 <title>untitled</title>
 <link rel="stylesheet" href="/home/rob/web_files/blog_files/css_files/default.css"/>
 <meta name="generator" content="Geany 1.37.1" />
+<script src="/home/rob/web_files/blog_files/js_files/script.js" defer></script>
 </head>
 
 <body>
 
 	<header>
-		<h1>Digital Journal</h1>
-		<div class="dropdown">
-			<button class="drop-button">options</button>
-			<div class="dropdown-menu">
-				dropdown content
+		<h1>Digital Journal > {Create Account}</h1>
+		
+		<!-- container wrapping drop-buttons-->
+		<div class="button-container">
+			
+			<!-- container for dropdown menu elements
+			drop-button, form, forms label and input elements -->
+			<div class="dropdown" data-dropdown>
+				<button class="drop-button" data-dropdown-button>Log in</button>
+				<div class="dropdown-menu">
+					<form>
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email"/>
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password"/>
+						<button type="submit">Log in</button>
+					</form>
+				</div>
+			</div>
+	
+			<!-- container for dropdown menu elements 
+			drop-button, dropdown-menu information grid, div holding dropdown heading/link combos-->
+			<div class="dropdown" data-dropdown>
+				<button class="drop-button" data-dropdown-button>options</button>
+				<div class="dropdown-menu information-grid">
+					<div>
+						<div class="dropdown-heading">Find</div>
+						<div class="dropdown-links">
+							<a href="" class="drop-button">People</a>
+							<a href="" class="drop-button">Topics</a>
+							<a href="" class="drop-button">groups</a>
+						</div>				
+						<div class="dropdown-heading">Settings</div>
+						<div class="dropdown-links">
+							<a href="" class="drop-button">Account</a>
+							<a href="" class="drop-button">Color</a>
+							<a href="" class="drop-button">Next link</a>
+						</div>				
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>

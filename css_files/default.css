@@ -3,9 +3,8 @@ body {
 }
 
 header{
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 5px solid #858085;
+	display: flex;
+	justify-content: space-between;
   
 }	
 
@@ -71,3 +70,59 @@ header{
 
 }
 
+.sidebar{
+	position: fixed;/* changes position from static to fixed*/
+	right: 0;
+	height: 100%;
+	background-color: #858085;
+	z-index: -1; /* lets fall behind cascading containers*/
+	
+	
+	
+}
+
+.sidebar > form{
+	padding-top: .75rem;
+	padding-left: .75rem;
+	padding-right: .75rem;
+}
+
+.sidebar > form > input{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: .5rem;
+
+}
+
+.sidebar > form > button{
+	background-color #808080; /* make black with purple tint*/
+}
+.header-line{
+	position:fixed;
+	height:5px;
+	width: 100%;
+	background-color: #858085;
+	z-index: -1;
+}
+
+.psudo-circle {
+    position: absolute;
+    background-color: #809080;
+    width: 1.5rem;
+    height: 1.3rem;
+    border-radius: 2rem;
+    right: 14.6rem;
+    z-index: 1;
+    top: 6rem;
+    overflow: hidden;
+}
+
+.psudo-square{
+	position: absolute;
+	background-color: #858085;
+	width: 1rem;
+	height: 1rem;
+	right: 14.5rem;
+}
+
+/*welcome to digital journal write your journal or diary online and decide between public or private*/

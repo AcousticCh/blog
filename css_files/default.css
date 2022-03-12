@@ -75,6 +75,7 @@ header{
 	right: 0;
 	height: 100%;
 	background-color: #858085;
+	box-shadow: 2px 2px 4px .2px rgba(0, 0, 0, .3);
 	z-index: -1; /* lets fall behind cascading containers*/
 	
 	
@@ -98,6 +99,7 @@ header{
 	background-color #808080; /* make black with purple tint*/
 }
 .header-line{
+	box-shadow: 1px 1px 4px .2px rgba(0, 0, 0, .2);
 	position:fixed;
 	height:5px;
 	width: 100%;
@@ -125,4 +127,23 @@ header{
 	right: 14.5rem;
 }
 
+.image-frame{
+	position: absolute;
+	width: 45rem;
+}
+
+.image{
+	position: absolute;
+	width: 500px;
+	height: 370;
+	left: 25%;
+	top: 3rem;
+	
+}
+
+.slider-buttons{
+	position: absolute;
+	top: 21rem;
+	left: 22rem;
+}
 /*welcome to digital journal write your journal or diary online and decide between public or private*/

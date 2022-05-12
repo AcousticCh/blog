@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}sign-up{%endblock%}
+
+<body>
+
+	<header>
+		<h1>Digital Journal{% block heading1 %} > {Create Account}{% endblock %}</h1>
+		
+		<!-- container wrapping drop-buttons-->
+		<div class="button-container">
+			{% block button_container %}
+			<!-- container for dropdown menu elements
+			drop-button, form, forms label and input elements -->
+			<div class="dropdown" data-dropdown>
+				<button class="drop-button" data-dropdown-button>Log in</button>
+				<div class="dropdown-menu">
+					<form>
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email"/>
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password"/>
+						<button type="submit">Log in</button>
+					</form>
+				</div>
+			</div>
+	
+			<!-- container for dropdown menu elements 
+			drop-button, dropdown-menu information grid, div holding dropdown heading/link combos-->
+			<div class="dropdown" data-dropdown>
+				<button class="drop-button" data-dropdown-button>options</button>
+				<div class="dropdown-menu information-grid">
+					<div>			
+						<div class="dropdown-heading">Settings</div>
+						<div class="dropdown-links">
+							<a href="" class="drop-button">Color</a>
+						</div>				
+					</div>
+				</div>
+			</div>
+			{% endblock %}
+		</div>
+	</header>
+	
+	{% block headerline %}
+	<div class="header-line"></div>
+	<div class="psudo-circle"></div> <!-- outward curve at top left corner of sidebar -->
+	<div class="psudo-square"></div>
+    {% endblock %}
+	{% block content %}
+	<article class="image-frame">
+		<img class="image" src="/home/rob/Downloads/328617.jpg"/>
+		<img class="image" src="/home/rob/Downloads/919633.png"/>
+		<img class="image" src="/home/rob/Downloads/974376.jpg"/>
+		
+		<div class="slider-buttons">
+			<button type="radio"></button>
+			<button type="radio"></button>
+			<button type="radio"></button>
+		</div>
+	</article>
+	{% endblock %}
+	
+	
+	
+	<aside class="sidebar">
+		{% block siderbar %}
+		<form class="sidebar-form">
+			<label for="email">Email:</label>
+			<input type="email" name="email"/>
+			<label for ="password">Password:</label>
+			<input type="password" name="password"/>
+			<label for="password">Password Check:</label>
+			<input type="password" name="password"/>
+			<label for="username">Username:</label>
+			<input type="username" name="username"/>
+			<button type="submit">Create</button>
+		</form>
+        {% endblock %}
+	</aside>
+</body>
+
+</html>

@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+
+{% block content %}
+<form class="new-page-container" method="POST">
+        <label for="new-page">Write Away:</label>
+        <textarea id="new-page" name="new-page" 
+                rows="10" columns="150">
+        </textarea>
+        <button type="submit">Post</button>
+</form>
+<h1 align="center">Notes</h1>
+<ul id="notes">
+    
+</ul>
+{% endblock %}
+

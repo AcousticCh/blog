@@ -98,6 +98,13 @@ header{
 .sidebar > form > button{
 	background-color: #808080; /* make black with purple tint*/
 }
+
+.new-page-container{
+	display: flex;
+	flex-direction: column;
+	
+}
+
 .header-line{
 	box-shadow: 1px 1px 4px .2px rgba(0, 0, 0, .2);
 	position: absolute;
@@ -132,9 +139,15 @@ header{
 	width: 45rem;
 }
 
+.sign-in-content{
+	position: absolute;
+	width: 45rem;
+}
+
+
 .image{
 	position: absolute;
-	width: 500px;
+	min-width: 500px;
 	height: 370;
 	left: 25%;
 	top: 3rem;

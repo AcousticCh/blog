@@ -14,7 +14,7 @@
 			<div class="dropdown" data-dropdown>
 				<button class="drop-button" data-dropdown-button>Log in</button>
 				<div class="dropdown-menu">
-					<form>
+					<form method="POST">
 						<label for="email">Email</label>
 						<input type="email" name="email" id="email"/>
 						<label for="password">Password</label>
@@ -64,15 +64,16 @@
 	
 	<aside class="sidebar">
 		{% block siderbar %}
-		<form class="sidebar-form">
+		<form method="POST" class="sidebar-form">
+			<h3 align="center">Create Account</h3>
 			<label for="email">Email:</label>
-			<input type="email" name="email"/>
-			<label for ="password">Password:</label>
-			<input type="password" name="password"/>
-			<label for="password">Password Check:</label>
-			<input type="password" name="password"/>
+			<input type="email" id="email" name="email" placeholder="Enter email"/>
+			<label for ="password1">Password:</label>
+			<input type="password" id="password1" name="password" placeholder="Create password"/>
+			<label for="password2">Password Check:</label>
+			<input type="password" id="password2" name="password" placeholder="Confirm password"/>
 			<label for="username">Username:</label>
-			<input type="username" name="username"/>
+			<input type="username" id="username" name="username" placeholder="Enter Username"/>
 			<button type="submit">Create</button>
 		</form>
         {% endblock %}

@@ -18,11 +18,11 @@
 			<div class="dropdown" data-dropdown>
 				<button class="drop-button" data-dropdown-button>Log in</button>
 				<div class="dropdown-menu">
-					<form>
+					<form method="POST">
 						<label for="email">Email</label>
-						<input type="email" name="email" id="email"/>
+						<input type="email" name="email" id="email" placeholder="Enter email"/>
 						<label for="password">Password</label>
-						<input type="password" name="password" id="password"/>
+						<input type="password" name="password" id="password" placeholder="Enter password"/>
 						<button type="submit">Log in</button>
 					</form>
 				</div>
@@ -44,7 +44,7 @@
 						<div class="dropdown-links">
 							<a href="" class="drop-button">Account</a>
 							<a href="" class="drop-button">Color</a>
-							<a href="" class="drop-button">Next link</a>
+							<a href="/logout" class="drop-button">Log out</a>
 						</div>				
 					</div>
 				</div>

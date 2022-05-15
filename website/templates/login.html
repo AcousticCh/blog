@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block headerline %}
+	<div class="header-line"></div>
+	<div class="psudo-circle"></div> <!-- outward curve at top left corner of sidebar -->
+	<div class="psudo-square"></div>
+{% endblock %}
+
+{% block content %}
+<div>
+<h1 class="sign-in-content">Ready to write?!</h1>
+<article class="image-frame">
+    <img class="image" src="/home/rob/Downloads/328617.jpg"/>
+    <img class="image" src="/home/rob/Downloads/919633.png"/>
+    <img class="image" src="/home/rob/Downloads/974376.jpg"/>
+    
+    <div class="slider-buttons">
+        <button type="radio"></button>
+        <button type="radio"></button>
+        <button type="radio"></button>
+    </div>
+</article>
+</div>
+{% endblock %}
+
+
+<aside class="sidebar">
+    {% block siderbar %}
+    <form method="POST" class="sidebar-form">
+        <h3 align="center">Sign in</h3>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email"/>
+        <label for ="password1">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Create password"/>
+        <button type="submit">sign in</button>
+    </form>
+    {% endblock %}
+</aside>

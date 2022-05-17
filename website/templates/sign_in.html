@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block heading1 %} > {Ready to write?!} >{% endblock %}
+
 {% block headerline %}
 	<div class="header-line"></div>
 	<div class="psudo-circle"></div> <!-- outward curve at top left corner of sidebar -->
@@ -7,8 +9,15 @@
 {% endblock %}
 
 {% block content %}
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+		<div class="notification is-danger" id="flash-message">
+			<br/>
+			{{ messages[0] }}
+		</div>
+		{% endif %}
+	{% endwith %}
 <div>
-<h1 class="sign-in-content">Ready to write?!</h1>
 <article class="image-frame">
     <img class="image" src="/home/rob/Downloads/328617.jpg"/>
     <img class="image" src="/home/rob/Downloads/919633.png"/>

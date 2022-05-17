@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 
+{% block heading1 %} > {{user.username}} {% endblock %}
+
 {% block content %}
-<form class="new-page-container" method="POST">
-        <label for="new-page">Write Away:</label>
-        <textarea id="new-page" name="new-page" 
+<form class="page-container" method="POST">
+        <label for="page">Write Away:</label>
+        <textarea id="page" name="page" 
                 rows="10" columns="150">
         </textarea>
         <button type="submit">Post</button>
 </form>
-<h1 align="center">Notes</h1>
-<ul id="notes">
-    
+<h1 align="center">Pages</h1>
+<ul>
+        {% for new_page in user.pages %}
+        <li class="list-group-item">
+            {{ new_page.data }}
+            <button type="button" class="close" onClick="deletePage({{ new_page.id }})">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </li>
+        {% endfor %}
 </ul>
 {% endblock %}
 

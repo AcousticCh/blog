@@ -46,7 +46,16 @@
 	<div class="psudo-circle"></div> <!-- outward curve at top left corner of sidebar -->
 	<div class="psudo-square"></div>
     {% endblock %}
+
 	{% block content %}
+	{% with messages = get_flashed_messages() %}
+        {% if messages %}
+		<div class="notification is-danger" id="flash-message">
+			<br/>
+			{{ messages[0] }}. Go to <a href="{{ url_for('auth.sign_in') }}">login page</a>
+		</div>
+		{% endif %}
+	{% endwith %}
 	<article class="image-frame">
 		<img class="image" src="/home/rob/Downloads/328617.jpg"/>
 		<img class="image" src="/home/rob/Downloads/919633.png"/>
@@ -64,16 +73,16 @@
 	
 	<aside class="sidebar">
 		{% block siderbar %}
-		<form method="POST" class="sidebar-form">
+		<form method="POST" action="/sign-up"class="sidebar-form">
 			<h3 align="center">Create Account</h3>
 			<label for="email">Email:</label>
 			<input type="email" id="email" name="email" placeholder="Enter email"/>
 			<label for ="password1">Password:</label>
-			<input type="password" id="password1" name="password" placeholder="Create password"/>
+			<input type="password" id="password1" name="password1" placeholder="Create password"/>
 			<label for="password2">Password Check:</label>
-			<input type="password" id="password2" name="password" placeholder="Confirm password"/>
+			<input type="password" id="password2" name="password2" placeholder="Confirm password"/>
 			<label for="username">Username:</label>
-			<input type="username" id="username" name="username" placeholder="Enter Username"/>
+			<input type="text" id="username" name="username" placeholder="Enter Username"/>
 			<button type="submit">Create</button>
 		</form>
         {% endblock %}

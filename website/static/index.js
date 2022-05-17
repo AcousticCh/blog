@@ -14,10 +14,10 @@ document.addEventListener("click", e => {
 		})
 })
 
-function deleteNote(noteId) {
-    fetch("/delete-note", {
+function deletePage(pageId) {
+    fetch("/delete-page", {
         method: "POST",
-        body: JSON.stringify({noteId: noteId}),
+        body: JSON.stringify({pageId: pageId}),
     }).then((_res) => {
         window.location.href = "/";
     });

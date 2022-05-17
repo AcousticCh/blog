@@ -15,18 +15,20 @@
 			{% block button_container %}
 			<!-- container for dropdown menu elements
 			drop-button, form, forms label and input elements -->
+			{% if not current_user.is_authenticated and not url_for("auth.sign_in") %}
 			<div class="dropdown" data-dropdown>
-				<button class="drop-button" data-dropdown-button>Log in</button>
+				<button class="drop-button" data-dropdown-button>Sign In</button>
 				<div class="dropdown-menu">
 					<form method="POST">
 						<label for="email">Email</label>
 						<input type="email" name="email" id="email" placeholder="Enter email"/>
 						<label for="password">Password</label>
 						<input type="password" name="password" id="password" placeholder="Enter password"/>
-						<button type="submit">Log in</button>
+						<button type="submit">Sign In</button>
 					</form>
 				</div>
 			</div>
+			{% endif %}
 	
 			<!-- container for dropdown menu elements 
 			drop-button, dropdown-menu information grid, div holding dropdown heading/link combos-->
@@ -36,15 +38,22 @@
 					<div>
 						<div class="dropdown-heading">Find</div>
 						<div class="dropdown-links">
+							<a href="/sign-up" class="drop-button">Sign Up</a>
+							{% if current_user.is_authenticated %}
 							<a href="" class="drop-button">People</a>
 							<a href="" class="drop-button">Topics</a>
-							<a href="" class="drop-button">groups</a>
+							<a href="" class="drop-button">Groups</a>
+							{% endif %}
 						</div>				
 						<div class="dropdown-heading">Settings</div>
 						<div class="dropdown-links">
+							{% if current_user.is_authenticated %}
 							<a href="" class="drop-button">Account</a>
+							{% endif %}
 							<a href="" class="drop-button">Color</a>
+							{% if current_user.is_authenticated %}
 							<a href="/logout" class="drop-button">Log out</a>
+							{% endif %}
 						</div>				
 					</div>
 				</div>
@@ -54,6 +63,7 @@
 	</header>
 	
     {% block headerline %}{% endblock %}
+	
 
     {% block content %}{% endblock %}
 	

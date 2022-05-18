@@ -4,11 +4,13 @@
 
 {% block content %}
 <form class="page-container" method="POST">
-        <label for="page">Write Away:</label>
-        <textarea id="page" name="page" 
-                rows="10" columns="150">
-        </textarea>
-        <button type="submit">Post</button>
+        <div id="page-container">
+                <label for="page">Write Away:</label>
+                <textarea id="page" name="page" 
+                        rows="10" columns="150">
+                </textarea>
+                <button id="page-button" type="submit">Post</button>
+        </div>
 </form>
 <h1 align="center">Pages</h1>
 <ul>

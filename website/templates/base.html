@@ -38,20 +38,20 @@
 					<div>
 						<div class="dropdown-heading">Find</div>
 						<div class="dropdown-links">
+							{% if not current_user.is_authenticated %}
 							<a href="/sign-up" class="drop-button">Sign Up</a>
+							{% endif %}
 							{% if current_user.is_authenticated %}
-							<a href="" class="drop-button">People</a>
-							<a href="" class="drop-button">Topics</a>
-							<a href="" class="drop-button">Groups</a>
+							<a href="" class="drop-button">Users</a>
+							<!--<a href="" class="drop-button">Topics</a>
+							<a href="" class="drop-button">Groups</a>-->
 							{% endif %}
 						</div>				
 						<div class="dropdown-heading">Settings</div>
 						<div class="dropdown-links">
 							{% if current_user.is_authenticated %}
-							<a href="" class="drop-button">Account</a>
-							{% endif %}
-							<a href="" class="drop-button">Color</a>
-							{% if current_user.is_authenticated %}
+							<!--<a href="" class="drop-button">Account</a>
+							<a href="" class="drop-button">Color</a>-->
 							<a href="/logout" class="drop-button">Log out</a>
 							{% endif %}
 						</div>				

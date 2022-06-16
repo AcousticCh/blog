@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 
 {% block heading1 %} > {{user.username}} {% endblock %}
-
+<nav id="navbar"></nav>
 {% block content %}
-<form class="page-container" method="POST">
-        <div id="page-container">
-                <label for="page">Write Away:</label>
-                <textarea id="page" name="page" 
-                        rows="10" columns="150">
-                </textarea>
-                <button id="page-button" type="submit">Post</button>
-        </div>
-</form>
-<h1 align="center">Pages</h1>
-<ul>
-        {% for new_page in user.pages %}
-        <li class="list-group-item">
-            {{ new_page.data }}
-            <button type="button" class="close" onClick="deletePage({{ new_page.id }})">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </li>
-        {% endfor %}
-</ul>
+<main>
+        <form class="page-container" method="POST">
+                <div id="page-container">
+                        <label for="page">Write Away:</label>
+                        <textarea id="page" name="page" wrap="soft"></textarea>
+                        <button id="page-button" type="submit">Post</button>
+                </div>
+        </form>
+        <h1 align="center">Pages</h1>
+        <ul>
+                {% for new_page in user.pages %}
+                <li class="list-group-item">
+                {{ new_page.data }}
+                <button type="button" class="close" onClick="deletePage({{ new_page.id }})">
+                        <span aria-hidden="true">&times;</span>
+                </button>
+                </li>
+                {% endfor %}
+        </ul>
+</main>
 {% endblock %}
 

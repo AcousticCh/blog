@@ -12,16 +12,16 @@
                 </div>
         </form>
         <h1 align="center">Pages</h1>
-        <ul>
+        <div class="folder">
                 {% for new_page in user.pages %}
-                <li class="list-group-item">
-                {{ new_page.data }}
+                <div class="page-card">
                 <button type="button" class="close" onClick="deletePage({{ new_page.id }})">
                         <span aria-hidden="true">&times;</span>
                 </button>
-                </li>
+                <article>{{ new_page.data }}</article>
+                </div>
                 {% endfor %}
-        </ul>
+        </div>
 </main>
 {% endblock %}
 

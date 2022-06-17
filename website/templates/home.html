@@ -15,10 +15,18 @@
         <div class="folder">
                 {% for new_page in user.pages %}
                 <div class="page-card">
-                <button type="button" class="close" onClick="deletePage({{ new_page.id }})">
-                        <span aria-hidden="true">&times;</span>
-                </button>
-                <article>{{ new_page.data }}</article>
+                        <div class="page-card-nav">
+                                <button type="button" class="close" onClick="#">
+                                        <span aria-hidden="true">u</span>
+                                </button>
+                                <button type="button" class="close" onClick="#">
+                                        <span aria-hidden="true">e</span>
+                                </button>
+                                <button type="button" class="close" onClick="deletePage({{ new_page.id }})">
+                                        <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <article>{{ new_page.data }}</article>
                 </div>
                 {% endfor %}
         </div>

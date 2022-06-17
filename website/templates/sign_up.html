@@ -40,12 +40,6 @@
 			{% endblock %}
 		</div>
 	</header>
-	
-	{% block headerline %}
-	<div class="header-line"></div>
-	<div class="psudo-circle"></div> <!-- outward curve at top left corner of sidebar -->
-	<div class="psudo-square"></div>
-    {% endblock %}
 
 	{% block content %}
 	{% with messages = get_flashed_messages() %}
@@ -56,37 +50,33 @@
 		</div>
 		{% endif %}
 	{% endwith %}
-	<article class="image-frame">
-		<img class="image" src="/home/rob/Downloads/328617.jpg"/>
-		<img class="image" src="/home/rob/Downloads/919633.png"/>
-		<img class="image" src="/home/rob/Downloads/974376.jpg"/>
-		
-		<div class="slider-buttons">
-			<button type="radio"></button>
-			<button type="radio"></button>
-			<button type="radio"></button>
-		</div>
-	</article>
-	{% endblock %}
-	
-	
-	
-	<aside class="sidebar">
-		{% block siderbar %}
-		<form method="POST" action="/sign-up"class="sidebar-form">
+	<div id="item-container">
+		<form method="POST" action="/sign-up" class="sidebar-form">
 			<h3 align="center">Create Account</h3>
 			<label for="email">Email:</label>
+			</br>
 			<input type="email" id="email" name="email" placeholder="Enter email"/>
+			</br>
 			<label for ="password1">Password:</label>
+			</br>
 			<input type="password" id="password1" name="password1" placeholder="Create password"/>
+			</br>
 			<label for="password2">Password Check:</label>
+			</br>
 			<input type="password" id="password2" name="password2" placeholder="Confirm password"/>
+			</br>
 			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" placeholder="Enter Username"/>
+			</br>
+			<input type="text" id="sername" name="username" placeholder="Enter Username"/>
+			</br>
 			<button type="submit">Create</button>
 		</form>
-        {% endblock %}
-	</aside>
+	</div>
+
+	{% endblock %}
+	
+
+
 </body>
 
 </html>

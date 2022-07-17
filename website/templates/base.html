@@ -8,13 +8,13 @@
 </head>
 <body>
     <header>
-		<h1>Digital Journal{% block heading1 %}{% endblock %}</h1>
+		{% block heading1 %}<h1>BlogPad</h1>{% endblock %}
 		
-		<!-- container wrapping drop-buttons-->
+		<!-- container wrapping drop-buttons
 		<div class="button-container">
 			{% block button_container %}
-			<!-- container for dropdown menu elements
-			drop-button, form, forms label and input elements -->
+			container for dropdown menu elements
+			drop-button, form, forms label and input elements
 			{% if not current_user.is_authenticated and not url_for("auth.sign_in") %}
 			<div class="dropdown" data-dropdown>
 				<button class="drop-button" data-dropdown-button>Sign In</button>
@@ -30,8 +30,8 @@
 			</div>
 			{% endif %}
 	
-			<!-- container for dropdown menu elements 
-			drop-button, dropdown-menu information grid, div holding dropdown heading/link combos-->
+			container for dropdown menu elements 
+			drop-button, dropdown-menu information grid, div holding dropdown heading/link combos
 			<div class="dropdown" data-dropdown>
 				<button class="drop-button" data-dropdown-button>options</button>
 				<div class="dropdown-menu information-grid">
@@ -43,15 +43,15 @@
 							{% endif %}
 							{% if current_user.is_authenticated %}
 							<a href="" class="drop-button">Users</a>
-							<!--<a href="" class="drop-button">Topics</a>
-							<a href="" class="drop-button">Groups</a>-->
+							<a href="" class="drop-button">Topics</a>
+							<a href="" class="drop-button">Groups</a>
 							{% endif %}
 						</div>				
 						<div class="dropdown-heading">Settings</div>
 						<div class="dropdown-links">
 							{% if current_user.is_authenticated %}
-							<!--<a href="" class="drop-button">Account</a>
-							<a href="" class="drop-button">Color</a>-->
+							<a href="" class="drop-button">Account</a>
+							<a href="" class="drop-button">Color</a>
 							<a href="/logout" class="drop-button">Log out</a>
 							{% endif %}
 						</div>				
@@ -59,7 +59,7 @@
 				</div>
 			</div>
             {% endblock %}
-		</div>
+		</div>-->
 	</header>
 	
     {% block headerline %}{% endblock %}

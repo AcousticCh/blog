@@ -4,7 +4,6 @@
 <body>
 
 	<header>
-		<h1>Digital Journal{% block heading1 %} > {Create Account}{% endblock %}</h1>
 		
 		<!-- container wrapping drop-buttons-->
 		<div class="button-container">
@@ -51,7 +50,7 @@
 		{% endif %}
 	{% endwith %}
 	<div id="item-container">
-		<form method="POST" action="/sign-up" class="sidebar-form">
+		<form method="POST" action="/sign-up" class="sidebar-form" id="signup-form">
 			<h3 align="center">Create Account</h3>
 			<label for="email">Email:</label>
 			</br>
@@ -69,10 +68,19 @@
 			</br>
 			<input type="text" id="sername" name="username" placeholder="Enter Username"/>
 			</br>
-			<button type="submit">Create</button>
+
+				<a type="sumbit" class="form-button" href="#" onclick="submitSignupForm()" style="--self-color:rgba(230, 193, 193, 0.9)">
+                	<span>
+                    	Create
+                    	<i></i>
+                	</span>
+            	</a>
+			
 		</form>
 	</div>
-
+	<div id="sign-up-link-position">
+        <a href="/sign-in" id="sign-up-link">Sign Up</a>
+    </div>
 	{% endblock %}
 	
 

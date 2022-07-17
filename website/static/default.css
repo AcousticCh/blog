@@ -19,10 +19,14 @@ html {
 }
 
 body {
-	min-height: 100%;
-	background-image: var(--bg-body);
+	height: 100%;
+	background: var(--bg-body);
+	background-repeat: no-repeat;
+	/*stretch background to fill screen*/
+	background-attachment: fixed;
 	margin: 0;
 	padding: 0;
+
 }
 
 body::-webkit-scrollbar {
@@ -43,9 +47,35 @@ header{
   
 }	
 
+#sign-in-header{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#sign-in-heading{
+	color: var(--light-header-text);
+}
+
+#sign-up-link{
+	color: var(--light-text);
+	background: var(--bg-obj-container);
+	max-width: 20vw;
+	padding: 0.2rem 0.4rem;
+	border: 0.2rem solid rgba(35, 88, 65, 0.871);
+	border-radius: 2rem;
+	transition: 1s;
+}
+
+#sign-up-link-position{
+	display: flex;
+	justify-content: center;
+}
+
+
 /* Buttons on dropdown menu*/
 .drop-button{
-	display: flex;
+	display: none;
 	flex-direction: column;
 	text-decoration: none;
 	background: none;
@@ -87,6 +117,7 @@ header{
 .dropdown.active > .drop-button{
 	color: #301515;
 }
+
 
 .information-grid{
 	display: grid;
@@ -190,28 +221,6 @@ header{
 	color: var(--light-text);
 }
 
-.sidebar > form{
-	padding-top: .75rem;
-	padding-left: .75rem;
-	padding-right: .75rem;
-}
-
-.sidebar > form > input{
-	display: flex;
-	flex-direction: column;
-	margin-bottom: .5rem;
-
-}
-
-.sidebar > form > button{
-	background-color: #808080; /* make black with purple tint*/
-}
-
-.new-page-container{
-	display: flex;
-	flex-direction: column;
-	
-}
 
 .header-line{
 	box-shadow: 1px 1px 4px .2px rgba(0, 0, 0, .2);
@@ -283,4 +292,117 @@ header{
 }
 
 
+
+.form-button {
+	display: flex;
+	justify-content: center;
+	transform: translateX(15%);
+	max-width: 50%;
+    position: relative;
+    background: var(--bg-body);
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    padding: 10px 30px;
+    transition: 0.5s;
+}
+
+.form-button:hover, .form-button:active {
+    letter-spacing: 0.25em;
+    background: var(--self-color);
+    color: var(--self-color);
+    box-shadow: 0 0 35px var(--self-color);
+}
+
+.form-button::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: var(--bg-body);
+}
+
+.form-button span {
+    position: relative;
+    z-index: 1;
+}
+
+.form-button i {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.form-button i::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 90%;
+    width: 10px;
+    height: 5px;
+    border: 2px solid var(--self-color);
+    background: var(--bg-body);
+    transition: 0.5s;
+    transform: translateX(45%);
+}
+
+.form-button:hover i::before, .form-button:active i::before {
+    width: 20px;
+    left: -15%;
+}
+.form-button i::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: -15%;
+    width: 10px;
+    height: 5px;
+    border: 2px solid var(--self-color);
+    background: var(--bg-body);
+    transition: 0.5s;
+}
+
+.form-button:hover i::after, .form-button:active i::after{
+    width: 20px;
+    left: 90%;
+}
+
+#signin-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	
+}
+
+#flash-message {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	transform: translateY(1.5rem);
+}
+
 /*welcome to digital journal write your journal or diary online and decide between public or private*/
+
+@media screen and (max-width: 600px) {
+	#item-container {
+		height: 70vh;
+	}
+
+	#signin-form > * {
+		margin-top: 1.3rem;
+		align-items: center;
+	}
+
+	#signup-form > * {
+		margin-top: 1.3rem;
+		align-items: center;
+	}
+
+	#sign-up-link{
+		padding: 0.4rem 0.6rem;
+
+	
+	
+}

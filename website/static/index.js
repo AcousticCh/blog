@@ -22,3 +22,15 @@ function deletePage(pageId) {
         window.location.href = "/";
     });
 }
+
+function submitSignupForm() {
+	document.getElementById("signup-form").submit();
+}
+
+function submitSigninForm() {
+	document.getElementById("signin-form").submit();
+}
+
+function submitNewPage() {
+	document.querySelector(".page-container").submit();
+}

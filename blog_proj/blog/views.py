@@ -11,8 +11,8 @@ class HomeListView(ListView):
     
 def page_create_view(request):
     return HttpResponseRedirect(reverse("html_generator:html_gen"))
-def page_view(request, page_id):
 
+def page_view(request, page_id):
     HtmlModel = apps.get_model("html_generator", "HtmlModel")
     html_object = get_object_or_404(HtmlModel,pk=page_id)
     context = { "html_page": html_object.page }

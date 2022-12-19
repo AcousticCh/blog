@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from .forms import MarkdownForm
-from .models import HtmlModel
+from .models import HtmlModel, MarkdownModel
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import markdown
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 def markdown_form_view(request):
@@ -16,7 +19,6 @@ def markdown_form_view(request):
             if form.is_valid():
                 title = form.cleaned_data["title"]
                 body = form.cleaned_data["body"]
-                form.cleaned_data["slug"] = title
                 form.save()
 
                 page = f"# {title}\n{body}"
@@ -24,7 +26,7 @@ def markdown_form_view(request):
                 html = markdown.markdown(page)
 
                 
-                html_object = HtmlModel.objects.create(author=, title=title, page=html)
+                html_object = HtmlModel.objects.create(user=request.user, title=title, page=html)
                 html_object.save()
                 html_object.refresh_from_db()
 

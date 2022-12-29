@@ -5,10 +5,11 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 import markdown
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
-
+@login_required
 def markdown_form_view(request):
     if str(request.method).upper() == "POST":
 
@@ -23,18 +24,20 @@ def markdown_form_view(request):
 
                 page = f"# {title}\n{body}"
 
+                slug = str(title).replace(" ", "_")
+
                 html = markdown.markdown(page)
 
-                
-                html_object = HtmlModel.objects.create(user=request.user, title=title, page=html)
+                # SLUG ADDED                
+                html_object = HtmlModel.objects.create(user=request.user, title=title, page=html, slug=slug)
                 html_object.save()
                 html_object.refresh_from_db()
 
-                return HttpResponseRedirect(reverse("blog:page", args=[html_object.id]))
+                return HttpResponseRedirect(reverse("blog:page", kwargs={ "slug": html_object.slug}))
 
 
     else:
         form = MarkdownForm()
         context = { "form": form }
-        return render(request, "page_form.html", context)
+        return render(request, "markdown_form.html", context)
 

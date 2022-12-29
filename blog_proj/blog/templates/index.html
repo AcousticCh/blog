@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  {% extends 'base.html' %}
+  <meta charset="UTF-8">
+  <title>Blogpad Home</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+{% block content %}
+<section id="intro" class="home-section">
+  <h2>Welcome To Blogpad</h2>
+  <p>This is a blogging website for personal journals and tutorials under the topic of technology.</p>
+  <p>Here every blog or post become a whole page of its own with its own url for people to search.</p>
+</section>
+<section id="post" class="home-section">
+  <h2>Recommended Post</h2>
+  <div class="post-cont">
+  {% for post in object_list %}
+  {% if forloop.counter <= 4 %}
+  <article class="post-box">
+    {{ post | safe }}
+  </article>
+  {% endif %}
+  {% endfor %}
+  
+  </div>
+</section>
+{% endblock %}
+<!-- partial -->
+  
+</body>
+</html>

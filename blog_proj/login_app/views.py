@@ -4,9 +4,11 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import get_user_model
 from .forms import SignupForm, LoginForm
+from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
+@login_required
 def login_view(request):
     signup_form = SignupForm()
     login_form = LoginForm()
@@ -14,6 +16,7 @@ def login_view(request):
     context = { "signup_form": signup_form, "login_form": login_form }
     return render(request, "login.html", context)
 
+@login_required
 def login_auth(request):
     form = LoginForm(request.POST)
     if form.is_valid():
@@ -28,8 +31,9 @@ def login_auth(request):
         context = { "error_message": error_message }
         return render(request, "test.html", context)
 
-    return HttpResponseRedirect(reverse("login_app:login"))
+    return HttpResponseRedirect(reverse("blog:home"))
 
+@login_required
 def signup_auth(request):
     form = SignupForm(request.POST)
     if form.is_valid():

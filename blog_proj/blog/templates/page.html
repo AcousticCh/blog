@@ -3,10 +3,14 @@
 <head>
   {% extends 'base.html' %}
   <meta charset="UTF-8">
-  <title>Blogpad Home</title>
+  <title>Blogpad Page</title>
+  {% load static %}
 </head>
 <body>
 {% block content %}
+<link rel="stylesheet" href="{% static 'page.css' %}">
+<article id="page-article">
 {{ html_page | safe }}
+</article>
 {% endblock %}
 </body>

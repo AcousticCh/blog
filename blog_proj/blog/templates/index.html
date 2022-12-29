@@ -20,8 +20,10 @@
   <div class="post-cont">
   {% for post in object_list %}
   {% if forloop.counter <= 4 %}
+  <!-- add descriptions to post models and place them in html post box instead of page -->
   <article class="post-box">
-    {{ post | safe }}
+    {{ post.title | safe }}
+    {{ post.page | safe }}
   </article>
   {% endif %}
   {% endfor %}

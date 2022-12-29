@@ -58,13 +58,6 @@
   
   #header-stack:nth-child(2) {
     text-align: center;
-    
-  }
-
-
-  
-  #header-stack:nth-child(2) {
-    text-align: center;
   }
 
 .home-section {
@@ -98,7 +91,7 @@
    text-align: center;
    border-radius: 2.5px; 
    min-width: 24vw;
-   min-height: 30%;
+   max-height: 35vh;
    box-shadow: inset 2px 2px 5px var(--dark-teal),
      inset -2px -2px 5px var(--dark-teal);
    opacity: 1;
@@ -113,10 +106,7 @@
   
   
   .post-box:hover {
-    opacity: 0;
-  }
-  .post-box:hover::after {
-    opacity: 1;
+    
   }
   
   .post-cont {

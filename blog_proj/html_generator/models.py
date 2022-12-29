@@ -4,6 +4,7 @@ from django.urls import reverse
 
 User = get_user_model()
 
+# add descriptions to post models and place them in html post box instead of page
 
 class MarkdownModel(models.Model):
     title = models.CharField(max_length=70, blank=True)

@@ -18,4 +18,4 @@ def page_view(request, slug):
     HtmlModel = apps.get_model("html_generator", "HtmlModel")
     html_object = get_object_or_404(HtmlModel,slug=slug)
     context = { "html_page": html_object.page }
-    return render(request, "markdown_form.html", context)
+    return render(request, "page.html", context)

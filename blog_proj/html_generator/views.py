@@ -18,7 +18,9 @@ def markdown_form_view(request):
             context = { "form": form }
 
             if form.is_valid():
+                form.instance.user = request.user
                 title = form.cleaned_data["title"]
+                description = form.cleaned_data["description"]
                 body = form.cleaned_data["body"]
                 form.save()
 
@@ -28,8 +30,10 @@ def markdown_form_view(request):
 
                 html = markdown.markdown(page)
 
+                md = get_object_or_404(MarkdownModel, title=title)
+
                 # SLUG ADDED                
-                html_object = HtmlModel.objects.create(user=request.user, title=title, page=html, slug=slug)
+                html_object = HtmlModel.objects.create(user=request.user, mdModel=md, title=title, description=description, page=html, slug=slug)
                 html_object.save()
                 html_object.refresh_from_db()
 

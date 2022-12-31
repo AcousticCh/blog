@@ -18,12 +18,14 @@
 <section id="post" class="home-section">
   <h2>Recommended Post</h2>
   <div class="post-cont">
-  {% for post in object_list %}
+  {% for post in latest_post_list %}
   {% if forloop.counter <= 4 %}
   <!-- add descriptions to post models and place them in html post box instead of page -->
   <article class="post-box">
+  <a href="{% url 'blog:page' post.slug %}">
     {{ post.title | safe }}
-    {{ post.page | safe }}
+    {{ post.description | safe }}
+  </a>
   </article>
   {% endif %}
   {% endfor %}

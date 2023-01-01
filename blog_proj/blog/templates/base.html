@@ -13,8 +13,8 @@
 <header>
   <h1>Blogpad</h1>
   <div id="header-stack">
-  <form id="form" role="search">
-    <input id="search-bar" type="search" id="query" name="q"
+  <form id="form" role="search" action="{% url 'blog:home' %}">
+    <input id="search-bar" type="search" id="query" name="search"
     placeholder="Search..."
     aria-label="Search through site content">
     <button>Search</button>

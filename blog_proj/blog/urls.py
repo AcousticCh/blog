@@ -7,5 +7,6 @@ urlpatterns = [
     path("", HomeListView.as_view(), name="home"),
     path("create/", views.page_create_view, name="create"),
     path("<slug:slug>/", views.page_view, name="page"),
+    path("search/", views.search_view, name="search"),
 ]
 # PAGE ID CHANGED TO SLUG

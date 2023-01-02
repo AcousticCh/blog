@@ -13,7 +13,6 @@ class HomeListView(ListView):
         super().__init__()
         self.model = apps.get_model("html_generator", "HtmlModel")
         self.template_name = "index.html"
-        self.context_object_name = 'latest_post_list'
 
     def get(self, request):
         search_string = request.GET.get("search")
@@ -23,12 +22,12 @@ class HomeListView(ListView):
             context = { "filtered_list": filtered_list }
             return render(request, "search.html", context)
         else:
-            context = { "latest_post_list": self.context_object_name }
+            context = { "latest_post_list": HtmlModel.objects.get_queryset() }
             return render(request, "index.html", context)
         
     def get_queryset(self):
         """Return the last five published questions."""
-        return HtmlModel.objects.order_by('-pk')[:5]
+        return HtmlModel.objects.order_by('-pk')
 
 @login_required
 def page_create_view(request):

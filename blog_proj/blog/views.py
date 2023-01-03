@@ -22,12 +22,10 @@ class HomeListView(ListView):
             context = { "filtered_list": filtered_list }
             return render(request, "search.html", context)
         else:
-            context = { "latest_post_list": HtmlModel.objects.get_queryset() }
+            lastest_list = HtmlModel.objects.order_by('-pub_date')[:4]
+            context = { "latest_post_list": lastest_list }
             return render(request, "index.html", context)
         
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return HtmlModel.objects.order_by('-pk')
 
 @login_required
 def page_create_view(request):

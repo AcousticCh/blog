@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.conf import settings
+from django.utils import timezone
 
 User = get_user_model()
 
@@ -12,6 +13,7 @@ class MarkdownModel(models.Model):
     title = models.CharField(max_length=70, blank=True)
     description = models.CharField(max_length=400, blank=True)
     body = models.CharField(max_length=5000, blank=True)
+    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return f"pk: {self.pk} | title: {self.title}"
@@ -23,6 +25,7 @@ class HtmlModel(models.Model):
     description = models.CharField(max_length=400, blank=True)
     page = models.CharField(max_length=8000)
     slug = models.SlugField(null=True)
+    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return f"pk: {self.pk} | title: {self.title}"

@@ -3,6 +3,9 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'search.css' %}">
 {% for page in filtered_list %}
-<h3 class="search-list">{{ page.title }}</h3>
+<article class="search-list">
+    <h3>{{ page.title }}</h3>
+    <p>{{ page.description }}</p>
+</article>
 {% endfor %}
 {% endblock %}

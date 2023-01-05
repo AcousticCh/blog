@@ -96,19 +96,43 @@
      inset -2px -2px 5px var(--dark-teal);
    opacity: 1;
   }
+
+  .post-box-title {
+    margin: 1.3vh 0 0.8vh 0;
+  }
+
+  .post-box-description {
+    margin: 0.5vh 0 1vh 0;
+  }
   
   .post-box:after {
    box-shadow: 2px 2px 7px var(--dark-teal),
       -2px -2px 5px var(--dark-teal);
     opacity: 0;
-    
   }
-  
-  
+ 
   .post-box:hover {
-    
+    box-shadow: 2px 2px 5px var(--dark-teal),
+      -2px -2px 5px var(--dark-teal);
+  }
+
+  /* FIX BROKEN ANIMATION */
+  @keyframes postboxhover {
+    0% { box-shadow: inset 2px 2px 5px var(--dark-teal),
+      inset -2px -2px 5px var(--dark-teal); }
+    50% { box-shadow: inset 0px 0px 0px var(--dark-teal),
+      inset 0px 0px 0px var(--dark-teal),
+      0px 0px 0px var(--dark-teal),
+      0px 0px 0px var(--dark-teal); }
+    100% { box-shadow: 2px 2px 5px var(--dark-teal),
+      -2px -2px 5px var(--dark-teal); }
   }
   
+  .post-box-link {
+    text-decoration: None;
+    color: black;
+  }
+
   .post-cont {
     display: inherit;
     flex-direction: row;

@@ -12,8 +12,10 @@
 {% block content %}
 <section id="intro" class="home-section">
   <h2>Welcome To Blogpad</h2>
-  <p>This is a blogging website for personal journals and tutorials under the topic of technology.</p>
-  <p>Here every blog or post become a whole page of its own with its own url for people to search.</p>
+  <p>This is my blogging website for personal journals and tutorials under the topic of technology.</p>
+</section>
+<section class="home-section">
+  <!-- THIS WILL BE THE TOPICS SECTION -->
 </section>
 <section id="post" class="home-section">
   <h2>Recommended Post</h2>
@@ -22,9 +24,10 @@
   {% if forloop.counter <= 4 %}
   <!-- add descriptions to post models and place them in html post box instead of page -->
   <article class="post-box">
-  <a href="{% url 'blog:page' post.slug %}">
-    {{ post.title | safe }}
-    {{ post.description | safe }}
+  <a class="post-box-link" href="{% url 'blog:page' post.slug %}">
+    <h4 class="post-box-title">{{ post.title | safe }}</h4>
+    <p>Description:<p>
+    <p class="post-box-description">{{ post.description | safe }}</p>
   </a>
   </article>
   {% endif %}

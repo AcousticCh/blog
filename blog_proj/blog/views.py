@@ -98,9 +98,9 @@ def create_test_topics(request):
     HtmlModel = apps.get_model("html_generator", "HtmlModel")
 
 
-    linux_topic = TopicModel.objects.create(title="Linux")
-    fast_api_topic = TopicModel.objects.create(title="Fast API")
-    django_topic = TopicModel.objects.create(title="Django 4.3")
+    linux_topic = TopicModel.objects.create(title="Linux", slug="Linux")
+    fast_api_topic = TopicModel.objects.create(title="Fast API", slug="Fast Api")
+    django_topic = TopicModel.objects.create(title="Django", slug="Django")
 
     linux_topic.save()
     fast_api_topic.save()
@@ -110,7 +110,7 @@ def create_test_topics(request):
     fast_api_topic.refresh_from_db()
     django_topic.refresh_from_db()
 
-    page = get_object_or_404(HtmlModel, pk=10)
+    page = get_object_or_404(HtmlModel, pk=1)
 
     page.topics.add(linux_topic, django_topic)
 

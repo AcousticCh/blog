@@ -7,6 +7,14 @@ User = get_user_model()
 
 # add descriptions to post models and place them in html post box instead of page
 
+class TopicModel(models.Model):
+    title = models.CharField(max_length=70, blank=True)
+    slug = models.SlugField(null=True)
+
+    def __str__(self):
+        return self.title
+
+
 class MarkdownModel(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=70, blank=True)
@@ -24,7 +32,9 @@ class HtmlModel(models.Model):
     description = models.CharField(max_length=400, blank=True)
     page = models.CharField(max_length=8000)
     slug = models.SlugField(null=True)
+    topics = models.ManyToManyField(TopicModel)
     pub_date = models.DateTimeField('date published')
+    featured = models.BooleanField(default=False)
 
     def __str__(self):
         return f"pk: {self.pk} | title: {self.title}"

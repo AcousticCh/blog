@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% load static %}
+
 {% block content %}
+{% load static %}
 <link rel="stylesheet" href="{% static 'search.css' %}">
 <article class="search-list">
-{% for page in filtered_list %}
+{% for page in topic_pages %}
 <section class="page-section">
     <a href="{% url 'blog:page' page.slug %}">
         <h3>{{ page.title }}</h3>

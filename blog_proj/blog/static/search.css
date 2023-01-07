@@ -1,4 +1,35 @@
 .search-list {
-    text-align: center;
-    margin: 2vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5vh;
+    margin-top: 1.5vh;
 }
+
+.page-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 2.5px; 
+    padding: 1.5vh 0;
+    margin: 0 4vw;
+    min-width: 24vw;
+    max-height: 35vh;
+    box-shadow: inset 2px 2px 5px var(--dark-teal),
+      inset -2px -2px 5px var(--dark-teal);
+    opacity: 1;
+   }
+  
+   .page-section:hover {
+    box-shadow: 2px 2px 5px var(--dark-teal),
+       -2px -2px 5px var(--dark-teal);
+   }
+
+   .page-section a {
+    text-decoration: none;
+    color: black;
+   }
+ 
+   .page-section:hover a {
+    color: #2a488b;
+   }

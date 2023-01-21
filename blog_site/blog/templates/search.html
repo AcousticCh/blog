@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'search.css' %}">
+<article class="search-list">
+{% for page in filtered_list %}
+<section class="page-section">
+    <a href="{% url 'blog:page' page.slug %}">
+        <h3>{{ page.title }}</h3>
+        <p>{{ page.description }}</p>
+    </a>
+</section>
+{% endfor %}
+</article>
+{% endblock %}

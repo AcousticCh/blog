@@ -1,0 +1,10 @@
+[build-system]
+requires = ['setuptools>=40.8.0', 'wheel']
+build-backend = 'setuptools.build_meta:__legacy__'
+
+[project]
+dependencies = [
+	"django>=4.1",
+	"markdown>=3.4",
+	"python-dotenv>=0.21",
+]

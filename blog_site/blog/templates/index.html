@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  {% extends 'base.html' %}
+  <meta charset="UTF-8">
+  <title>Blogpad Home</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+{% block content %}
+<div class="section-box">
+<section id="intro" class="home-section">
+  <h2>Welcome To Blogpad</h2>
+  <p>This is my blogging website intended for journals and tutorials under the topic of technology.</p>
+  <p>You can select a published titlr or topic below and go to that page or search then do the same</p>
+</section>
+
+<section class="home-section">
+  <h2>Topics</h2>
+  <div class="post-cont">
+  {% for topic in topic_list %}
+  <article class="post-box">
+    <a class="post-box-link" href="{% url 'blog:topic_list' topic.slug %}"><p class="post-box-description">{{ topic }}</p></a>
+  </article>
+  {% endfor %}
+  </div>
+</section>
+
+<section id="post" class="home-section">
+  <h2>Latest Pages</h2>
+  <div class="post-cont">
+  {% for post in latest_post_list %}
+  {% if forloop.counter <= 4 %}
+  <!-- add descriptions to post models and place them in html post box instead of page -->
+  <article class="post-box">
+  <a class="post-box-link" href="{% url 'blog:page' post.slug %}">
+    <h4 class="post-box-title">{{ post.title | safe }}</h4>
+    <p>Description:<p>
+    <p class="post-box-description">{{ post.description | safe }}</p>
+  </a>
+  </article>
+  {% endif %}
+  {% endfor %}
+  </div>
+</section>
+
+<section class="home-section">
+  <h2>Recommended Pages</h2>
+  <div class="post-cont">
+  {% for post in  recommended_list%}
+  {% if forloop.counter <= 4 %}
+  <!-- add descriptions to post models and place them in html post box instead of page -->
+  <article class="post-box">
+  <a class="post-box-link" href="{% url 'blog:page' post.slug %}">
+    <h4 class="post-box-title">{{ post.title | safe }}</h4>
+    <p>Description:<p>
+    <p class="post-box-description">{{ post.description | safe }}</p>
+  </a>
+  </article>
+  {% endif %}
+  {% endfor %}
+  </div>
+</section>
+</div>
+{% endblock %}
+<!-- partial -->
+  
+</body>
+</html>

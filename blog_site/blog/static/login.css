@@ -1,0 +1,109 @@
+:root {
+    --light-teal: #91fecd;
+    --teal: #80ffd0;
+    --dark-teal: #42b282;
+    --red: #b1422f;
+    --salmon: #ff8b76;
+    --dark-purple: #5a78bb;
+}
+  
+#outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--light-teal);
+}
+
+ #login-container {
+    background: var(--teal);
+    padding: 1rem;
+    border: 0px solid var(--dark-purple);
+    border-radius: 10%;
+    box-shadow: 0px -3px 8px var(--dark-teal),
+      0px 3px 8px var(--dark-teal);
+  }
+  
+  #login-form { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; 
+    padding: 1rem;
+    border-radius: 10%;
+    box-shadow: inset 2px 2px 5px var(--dark-teal),
+     inset -2px -2px 5px var(--dark-teal);
+   opacity: 1;
+  }
+  
+  #register-form { 
+  
+    display: none;
+  
+    flex-direction: column;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+    gap: 1rem; 
+  
+    padding: 1rem;
+  
+    border-radius: 10%;
+  
+    box-shadow: inset 2px 2px 5px var(--dark-teal),
+  
+     inset -2px -2px 5px var(--dark-teal);
+  
+   opacity: 1;
+  
+  }
+  
+  #login-title, #register-title{
+    text-align: center;
+    color: var(--dark-purple);
+  }
+  
+  
+  .text-input {
+    background-color: var(--light-teal);
+    border: 1px solid var(--dark-purple);
+    border-radius: 3px;
+  }
+  
+  .text-input:focus {
+    outline: none;
+  }
+  
+  #submit-button {
+    border: none;
+    border-radius: 14px;
+    color: white;
+    background: var(--dark-purple);
+    opacity: 0.8;
+    transition: 1s;
+    
+  }
+  
+  #submit-button:hover {
+    box-shadow: 2px 2px 3px var(--dark-purple),
+     -2px -2px 3px var(--dark-purple);
+    opacity: 1;
+  }
+  
+  #register-link, #login-link {
+    text-decoration: none;
+    
+  }
+  
+  @media (min-width: 1500px) {
+    #login-form {
+      padding: 5rem;
+    }
+    #register-form{
+      padding: 5rem;
+    }
+  }

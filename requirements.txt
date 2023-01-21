@@ -1,0 +1,6 @@
+asgiref==3.5.2
+Django==4.1.4
+Markdown==3.4.1
+python-dotenv==0.21.0
+sqlparse==0.4.3
+UNKNOWN @ file:///home/rob/programming/web/djblog_proj

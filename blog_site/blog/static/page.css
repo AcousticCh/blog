@@ -1,0 +1,17 @@
+#page-article {
+    width: 70vw;
+    height: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+h1:first-child {
+    text-align: center;
+}
+
+#page-article ul {
+    width: 70vw;
+    margin: 0 auto;
+    text-align: left;
+    list-style-position: inside;
+}

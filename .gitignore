@@ -1,0 +1,12 @@
+README.rst
+setup.*
+MANIFEST.in
+env/
+blog_proj/.env
+blog_proj/db.sqlite3
+blog_proj/blog/migrations/*
+blog_proj/login_app/migrations/*
+blog_proj/html_generator/migrations/*
+!blog_proj/blog/migrations/__init__.py
+!blog_proj/login_app/migrations/__init__.py
+!blog_proj/html_generator/migrations/__init__.py

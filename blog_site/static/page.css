@@ -9,9 +9,32 @@ h1:first-child {
     text-align: center;
 }
 
+/* Format on return */
+
 #page-article ul {
     width: 70vw;
     margin: 0 auto;
     text-align: left;
     list-style-position: inside;
 }
+
+#page-article pre {
+    /*border: 2px solid red;*/
+    border-radius: 30px;
+    padding: 1% 1%;
+    box-shadow: inset 2px 2px 5px var(--dark-teal),
+         inset -2px -2px 5px var(--dark-teal);
+
+}
+
+/*.codeblock {
+   display: flex;
+   flex-direction: column;
+   gap: 7vh;
+   border-radius: 2.5px; 
+   min-width: 24vw;
+   max-height: 35vh;
+   box-shadow: inset 2px 2px 5px var(--dark-teal),
+     inset -2px -2px 5px var(--dark-teal);
+   opacity: 1;
+  }*/

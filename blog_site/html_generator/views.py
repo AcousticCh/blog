@@ -26,15 +26,14 @@ def markdown_form_view(request):
                 body = form.cleaned_data["body"]
                 form.save()
 
-                page = f"# {title}\n{body}"
 
+                page = f"# {title}\n{body}"
                 slug = str(title).replace(" ", "_")
 
-                html = markdown.markdown(page)
+                html = markdown.markdown(page, extensions=["fenced_code"])
 
                 md = get_object_or_404(MarkdownModel, title=title)
 
-                # SLUG ADDED                
                 html_object = HtmlModel.objects.create(user=request.user, mdModel=md, title=title, description=description, page=html, slug=slug, pub_date = timezone.now())
                 html_object.save()
                 html_object.refresh_from_db()

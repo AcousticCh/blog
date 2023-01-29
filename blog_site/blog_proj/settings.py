@@ -124,11 +124,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL='static/'
-STATIC_ROOT=os.path.join(BASE_DIR, 'static/') 
+STATIC_ROOT='/var/www/blog_site/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
+CSRF_TRUSTED_ORIGINS = [
+    "blogpad.org",
+]
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "login_app.User"
+
+ADMIN_MEDIA_PREFIX = '/static/admin/'

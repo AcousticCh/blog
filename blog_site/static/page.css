@@ -5,17 +5,34 @@
     text-align: left;
 }
 
-h1:first-child {
+h1, h2, h3, h4, h5 {
     text-align: center;
+    padding: 1.25vh 0 1.25vh 0;
 }
 
 /* Format on return */
 
-#page-article ul {
+#page-article ul, #page-article ol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
     width: 70vw;
-    margin: 0 auto;
+    margin: 0.5vh auto;
     text-align: left;
     list-style-position: inside;
+}
+
+#page-article ul li {
+    margin: 0.75vh 0 0.75vh 0;
+}
+
+#page-article p {
+    display: inline;
+    margin: 0.75vh 0 0.75vh 0;
+}
+
+#page-article ol li::marker {
+    margin: 0.75vh 0 0.75vh 0;
 }
 
 #page-article pre {
